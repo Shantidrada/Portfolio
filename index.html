@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashanti Jero Andrada - Resume</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: calc(100vh - 40px);
+        }
+
+        .sidebar {
+            background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-img 
+{
+    width: 100px;          
+    height: 100px;         
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;      
+    color: white;
+    border: 3px solid rgba(255,255,255,0.2);  
+    overflow: hidden;
+    position: relative;
+}
+
+        .profile h1 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .profile .title {
+            color: #bdc3c7;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h3 {
+            color: #4ecdc4;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9em;
+        }
+
+        .contact-info i {
+            width: 20px;
+            color: #4ecdc4;
+        }
+
+        .skills-list, .languages-list {
+            list-style: none;
+        }
+
+        .skill-item, .language-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name, .language-name {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar, .language-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress, .language-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4ecdc4, #44a08d);
+            border-radius: 3px;
+            transition: width 2s ease;
+        }
+
+        .main-content {
+            padding: 40px;
+            background: white;
+        }
+
+        .main-section {
+            margin-bottom: 50px;
+        }
+
+        .main-section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .main-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #4ecdc4, #44a08d);
+            border-radius: 2px;
+        }
+
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #4ecdc4, #44a08d);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #4ecdc4;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #4ecdc4;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .timeline-date {
+            color: #4ecdc4;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .timeline-company {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .timeline-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4ecdc4, #44a08d);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #4ecdc4;
+        }
+
+        .project-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: none;
+                min-height: auto;
+            }
+            
+            .timeline-item:hover {
+                transform: none;
+            }
+            
+            .project-card:hover {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin: 10px;
+            }
+            
+            .sidebar {
+                padding: 30px 20px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Subtle animations */
+        .timeline-item {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .project-card {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.2s; }
+        .project-card:nth-child(2) { animation-delay: 0.3s; }
+        .project-card:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <div class="profle-img">
+		<img src="Portfolio Image.png" alt="Ashanti Jero Andrada">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h1>Ashanti Jero Andrada</h1>
+                <div class="title">Creative Photographer/Videographer & Freelance PC Technician</div>
+            </div>
+
+            <div class="section">
+                <h3><i class="fas fa-address-book"></i> Contact</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i> andradaashantijero@email.com</li>
+                    <li><i class="fas fa-phone"></i> +63 9124079264</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Bacolod City, Negros Occidental, Philippines</li>
+                    <li><i class="fab fa-linkedin"></i> www.linkedin.com/in/shantidrada</li>
+                    <li><i class="fab fa-github"></i> https://github.com/Shantidrada</li>
+		    <li><i class="fab fa-facebook"></i> https://www.facebook.com/sinagvisualz</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3><i class="fas fa-cogs"></i> Skills</h3>
+                <ul class="skills-list">
+                    <li class="skill-item">
+                        <div class="skill-name">Team Collaboration</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </li>
+                    <li class="skill-item">
+                        <div class="skill-name">Video Editing</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </li>
+                    <li class="skill-item">
+                        <div class="skill-name">Technical Troubleshooting</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </li>
+                    <li class="skill-item">
+                        <div class="skill-name">Computer-Software Expertise</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </li>
+                    <li class="skill-item">
+                        <div class="skill-name">Photography & Visual Arts</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 93%"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3><i class="fas fa-language"></i> Languages</h3>
+                <ul class="languages-list">
+                    <li class="language-item">
+                        <div class="language-name">English</div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 95%"></div>
+                        </div>
+                    </li>
+                    <li class="language-item">
+                        <div class="language-name">Filipino</div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 100%"></div>
+                        </div>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="main-section">
+                <h2>About Me</h2>
+                <p class="about-text">
+                    About Me
+Creative Photographer and Videographer with a passion for capturing stories through dynamic visuals and compelling motion. My work combines artistic vision with technical know-how, giving me the ability to handle both the creative direction of a shoot and the technical details behind the scenes. With a solid foundation in computer hardware troubleshooting and a working knowledge of software, I approach projects with problem-solving skills that keep things running smoothly. I value collaboration and clear communication, ensuring that every production is both visually striking and seamlessly executed.
+                </p>
+            </div>
+
+            <div class="main-section">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021 - Present</div>
+                        <div class="timeline-title">Freelance Photographer/Videographer</div>
+                        <div class="timeline-company">Self Employed</div>
+                        <div class="timeline-description">
+                            A versatile creative professional specializing in capturing compelling images and dynamic video content for clients across various industries. Skilled in conceptualizing, shooting, and editing projects from start to finish, with an eye for detail and a passion for visual storytelling. Experienced in working independently or collaboratively, delivering high-quality content that aligns with each client’s vision, brand, and goals. Adept at managing shoots, directing subjects, and using both technical expertise and creative insight to produce impactful results on time and within budget.
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024 - Present</div>
+                        <div class="timeline-title">Freelance PC Technician</div>
+                        <div class="timeline-company">Self Employed</div>
+                        <div class="timeline-description">
+                            Independent computer repair and troubleshooting specialist with experience diagnosing and resolving hardware issues, performing upgrades, and providing basic software support. Skilled at identifying problems quickly, explaining solutions clearly, and ensuring that systems run smoothly and efficiently. Offers flexible, on-call services for individuals and small businesses, delivering reliable technical assistance without the overhead of a full-time IT department.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-section">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-title">VMA Short Film Contest</div>
+                        <div class="project-description">
+                           I took the lead in editing a short film that went on to win Champion, along with awards for Best in Editing and Best in Visuals. From crafting the pacing and flow to enhancing every frame with clean cuts and color grading, I made sure each scene delivered maximum impact. This project let me push my creative eye and technical skills to the limit — turning raw footage into a cinematic piece that stood out to the judges.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Premiere Pro</span>
+			</div>
+			</div>
+
+			<div class="project-card">
+			<div class="project-title">Photography/ Videography Portfolio</div>
+                        <div class="project-description">
+                           I took the lead in editing a short film that went on to win Champion, along with awards for Best in Editing and Best in Visuals. From crafting the pacing and flow to enhancing every frame with clean cuts and color grading, I made sure each scene delivered maximum impact. This project let me push my creative eye and technical skills to the limit — turning raw footage into a cinematic piece that stood out to the judges.
+                        </div>
+			    <div class="project-tech">
+                            <span class="tech-tag">Photo & Video Editing</span>
+			    <span class="tech-tag">Client Relations</span>
+			    <span class="tech-tag">Creative Visuals</span>
+                    </div>
+ 		  </div>
+                </div>
+            </div>
+            <div class="main-section">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - Current</div>
+                        <div class="timeline-title">Bachelor of Science in Information Technology</div>
+                        <div class="timeline-company">STI West Negros University</div>
+                        <div class="timeline-description">
+                            Currently pursuing Bachelor of Science in Information Technology concentrating on database administration, system analysis, and software development.  integrating theoretical understanding with real-world data management and innovative problem-solving expertise.
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            setTimeout(() => {
+                const skillBars = document.querySelectorAll('.skill-progress, .language-progress');
+                skillBars.forEach((bar, index) => {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, index * 100);
+                });
+            }, 500);
+
+            
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#f1f3f4';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '#f8f9fa';
+                });
+            });
+
+            
+            let ticking = false;
+            function updateScrollEffect() {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelector('.container');
+                const speed = scrolled * 0.5;
+                
+                if (parallax) {
+                    parallax.style.transform = `translateY(${speed * 0.1}px)`;
+                }
+                ticking = false;
+            }
+
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateScrollEffect);
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', requestTick);
+
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, observerOptions);
+
+           
+            document.querySelectorAll('.timeline-item, .project-card').forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
